@@ -1,35 +1,42 @@
 package TrabalhoClasses;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
+
+import static TrabalhoClasses.Carro.criarCarro;
 
 public class Executora {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int operação;
+       Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Sistema de Entreterimento");
+        int opcao;
+        do {
+            System.out.println("Menu Principal:");
+            System.out.println("1. Criar carro");
+            System.out.println("2. Ligar carro");
+            System.out.println("3. Emitir barulho do carro");
+            System.out.println("4. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
 
-        System.out.println("Informe que tipo de entreterimento deseja criar");
-        System.out.println("1 - Filme");
-        System.out.println("2 - Jogo");
-        System.out.println("3 - Sair");
+            executarOpcao(opcao, scanner);
+        } while (opcao != 4);
 
-        System.out.println("Informe a operação desejada!");
+    }
 
-        operação = scanner.nextInt();
-
-        while (operação < 1 || operação > 3){
-            System.out.println("Operação invalida. Digite um numero entre 1 e 3");
-            operação = scanner.nextInt();
+    private static void executarOpcao(int opcao, Scanner scanner) {
+        Carro carro = new Carro("","", 0, "");
+        if (opcao == 1) {
+            criarCarro(carro, scanner);
+        } else if (opcao == 2) {
+                carro.ligarCarro();
+        } else if (opcao == 3) {
+                carro.emitirSom();
+        } else if (opcao == 4) {
+            System.out.println("Saindo...");
+        } else {
+            System.out.println("Opção inválida! Tente novamente.");
         }
-
-
-
-
-
-
-
     }
 
 }

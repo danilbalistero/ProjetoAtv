@@ -25,6 +25,7 @@ public class Carro extends Veiculo{
         if ("Picape".equalsIgnoreCase(categoria)){
             System.out.println("RAM TCHU");
             emitirSom();
+
         } else {
             System.out.println("VROOM VROOM");
         }
@@ -47,7 +48,7 @@ public class Carro extends Veiculo{
         }
     }
 
-    public static Carro criarCarro(Carro carro, Scanner scanner) {
+    public static Carro criarCarro(Scanner scanner) {
         Scanner Scanner = new Scanner(System.in);
         System.out.print("Digite o modelo do carro: ");
         String modelo = scanner.nextLine();
@@ -61,6 +62,20 @@ public class Carro extends Veiculo{
 
         return new Carro(modelo, marca, ano, categoria);
     }
+
+    public void Som(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Deseja ligar o som do carro? ( [sim] [não] )");
+        String somLigado = scanner.nextLine();
+
+        if ("Sim".equalsIgnoreCase(somLigado)){
+            System.out.println("♫♫ O som esta ligado ♫♫");
+        } else {
+            System.out.println("O som esta desligado");
+        }
+    }
+
+
 }
 
 

@@ -10,33 +10,38 @@ public class Executora {
 
         int opcao;
         do {
+            System.out.println();
             System.out.println("Menu Principal:");
             System.out.println("1. Criar carro");
             System.out.println("2. Ligar carro");
             System.out.println("3. Emitir barulho do carro");
-            System.out.println("4. Sair");
+            System.out.println("4. Ligar som do carro");
+            System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
+
             opcao = scanner.nextInt();
             scanner.nextLine();
 
             executarOpcao(opcao, scanner);
-        } while (opcao != 4);
+        } while (opcao != 5);
 
     }
 
     private static void executarOpcao(int opcao, Scanner scanner) {
         Carro carro = new Carro("","", 0, "");
         if (opcao == 1) {
-            criarCarro(carro, scanner);
+            criarCarro(scanner);
         } else if (opcao == 2) {
                 carro.ligarCarro();
         } else if (opcao == 3) {
                 carro.emitirSom();
         } else if (opcao == 4) {
+                carro.Som();
+        } else if (opcao == 5){
             System.out.println("Saindo...");
-        } else {
+        } else
             System.out.println("Opção inválida! Tente novamente.");
-        }
+
     }
 
 }

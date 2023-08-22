@@ -4,6 +4,7 @@ public class Veiculo {
     private String modelo;
     private String marca;
     private int ano;
+
     public Veiculo(String modelo, String marca, int ano) {
         this.modelo = modelo;
         this.marca = marca;
@@ -34,9 +35,12 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public void emitirBarulho(){
+    public void emitirBarulho() {
         System.out.println("o veiculo esta fazendo barulho.");
         return;
     }
 
+    public void motorFuncionando() {
+        System.out.println("O motor esta funcionando");
+    }
 }

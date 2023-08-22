@@ -93,8 +93,9 @@ public class Executora {
             System.out.println();
             System.out.println("==Menu Moto==");
             System.out.println("1. Criar Moto");
-            System.out.println("2. Empinar moto");
-            System.out.println("3. Sair");
+            System.out.println("2. Ligar Moto");
+            System.out.println("3. Empinar moto");
+            System.out.println("4. Sair");
             System.out.println("Escolha as opçoes disponiveis");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -111,11 +112,17 @@ public class Executora {
             }
         } else if (opcao == 2) {
             if (moto != null) {
-                moto.empinar(scanner);
+               moto.ligarMoto();
             } else {
                 System.out.println("Crie uma moto primeiro.");
             }
         } else if (opcao == 3) {
+            if (moto != null) {
+                moto.empinar(scanner);
+            } else {
+                System.out.println("Crie uma moto primeiro.");
+            }
+        } else if (opcao == 4) {
             System.out.println("Saindo...");
         } else {
             System.out.println("Opção inválida. Digite apenas os números que estão no menu.");

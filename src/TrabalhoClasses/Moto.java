@@ -59,6 +59,22 @@ public class Moto extends Veiculo {
         }
     }
 
+    @Override
+    public void motorFuncionando() {
+        System.out.println("O motor da moto esta funcionando");
+        super.motorFuncionando();
+    }
 
+    public void ligarMoto() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a marcha atual (N para neutro): ");
+        String marcha = scanner.nextLine();
 
+        if ("N".equalsIgnoreCase(marcha)) {
+            System.out.println("Moto ligada!");
+            motorFuncionando();
+        } else {
+            System.out.println("Não é possível ligar a moto com a marcha em " + marcha + ". Coloque em neutro (N) primeiro.");
+        }
+    }
 }

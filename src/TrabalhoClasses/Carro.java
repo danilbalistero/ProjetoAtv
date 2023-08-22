@@ -30,9 +30,9 @@ public class Carro extends Veiculo{
             System.out.println("VROOM VROOM");
         }
     }
-
+    @Override
     public void motorFuncionando() {
-        System.out.println("O motor esta funcionando");
+        System.out.println("O motor do carro esta funcionando");
     }
 
     public void ligarCarro() {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Executora {
     private static Carro carro = null; //variavel para armazenar o carro
-    private static Moto moto = null;
+    private static Moto moto = null; //variavel para armazenar a moto
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -29,11 +29,7 @@ public class Executora {
         } while (opcao != 3);
 
     }
-
-    /*Utilizei 2 metodos para o carro, o primeiro apenas para construir o menu
-    e o outro para construir o as opçoes*/
-    /*Utilizei if e else por que era as opçoes que eu estava mais familiarizadas*/
-
+    
     private static void executarMenuCarro() {
         Scanner scanner = new Scanner(System.in);
         int opcao;
@@ -80,11 +76,7 @@ public class Executora {
             System.out.println("Opção inválida! Tente novamente.");
         }
     }
-
-    /*
-        Quando criei os metodos para a moto foi bem mais facil, pq ja tinha um
-        "modelo" pronto. Gostaria de ter testado switch case.
-     */
+    
     private static void executarMenuMoto() {
         Scanner scanner = new Scanner(System.in);
         int opcao;
@@ -128,5 +120,4 @@ public class Executora {
             System.out.println("Opção inválida. Digite apenas os números que estão no menu.");
         }
     }
-
 }

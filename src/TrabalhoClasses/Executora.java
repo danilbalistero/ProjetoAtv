@@ -3,7 +3,7 @@ package TrabalhoClasses;
 import java.util.Scanner;
 
 public class Executora {
-    private static Carro carro = null; // Variável para armazenar o carro
+    private static Carro carro = null; //variavel para armazenar o carro
     private static Moto moto = null;
 
     public static void main(String[] args) {
@@ -105,7 +105,7 @@ public class Executora {
     private static void criacaoMenuMoto(int opcao, Scanner scanner) {
         if (opcao == 1) {
             if (moto == null) {
-                moto = Moto.criarMoto(scanner); // Crie uma instância da classe Moto
+                moto = Moto.criarMoto(scanner);
             } else {
                 System.out.println("A moto já foi criada.");
             }

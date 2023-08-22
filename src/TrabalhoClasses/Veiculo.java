@@ -39,7 +39,6 @@ public class Veiculo {
         System.out.println("o veiculo esta fazendo barulho.");
         return;
     }
-
     public void motorFuncionando() {
         System.out.println("O motor esta funcionando");
     }

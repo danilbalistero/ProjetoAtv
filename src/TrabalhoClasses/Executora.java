@@ -11,11 +11,12 @@ public class Executora {
         int opcao;
 
         do {
-            System.out.println();
-            System.out.println("Menu Principal");
-            System.out.println("1. Carro");
-            System.out.println("2. Moto");
-            System.out.println("3. Sair");
+            System.out.println("┏─━─━─━ ∞◆∞ ━─━─━─┓ ");
+            System.out.println("   Menu Principal   ");
+            System.out.println("   1. Carro");
+            System.out.println("   2. Moto");
+            System.out.println("   3. Sair");
+            System.out.println("┗─━─━─━ ∞◆∞ ━─━─━─┛ ");
             System.out.println("Escolha uma opção para criar");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -35,13 +36,14 @@ public class Executora {
         int opcao;
 
         do {
-            System.out.println();
-            System.out.println("==Menu Carro==");
-            System.out.println("1. Criar carro");
-            System.out.println("2. Ligar carro");
-            System.out.println("3. Emitir barulho do carro");
-            System.out.println("4. Ligar som do carro");
-            System.out.println("5. Sair");
+            System.out.println("╔══━━────────────── • ──────────────━━══╗");
+            System.out.println("             ==Menu Carro==              ");
+            System.out.println("        1. Criar carro                   ");
+            System.out.println("        2. Ligar carro                   ");
+            System.out.println("        3. Emitir barulho do carro       ");
+            System.out.println("        4. Ligar som do carro            ");
+            System.out.println("        5. Sair                          ");
+            System.out.println("╚══━━────────────── • ──────────────━━══╝");
             System.out.print("Escolha uma opção: ");
 
             opcao = scanner.nextInt();
@@ -82,17 +84,19 @@ public class Executora {
         int opcao;
 
         do {
-            System.out.println();
-            System.out.println("==Menu Moto==");
-            System.out.println("1. Criar Moto");
-            System.out.println("2. Ligar Moto");
-            System.out.println("3. Empinar moto");
-            System.out.println("4. Sair");
+            System.out.println("╔══━━────────── • ──────────━━══╗");
+            System.out.println("          ==Menu Moto==          ");
+            System.out.println("          1. Criar Moto          ");
+            System.out.println("          2. Ligar Moto          ");
+            System.out.println("          3. Empinar moto        ");
+            System.out.println("          4. Sair                ");
+            System.out.println("╚══━━────────── • ──────────━━══╝");
+
             System.out.println("Escolha as opçoes disponiveis");
             opcao = scanner.nextInt();
             scanner.nextLine();
             criacaoMenuMoto(opcao, scanner);
-        } while (opcao != 3);
+        } while (opcao != 4);
     }
 
     private static void criacaoMenuMoto(int opcao, Scanner scanner) {

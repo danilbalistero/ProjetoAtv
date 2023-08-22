@@ -34,7 +34,7 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public void emitirSom(){
+    public void emitirBarulho(){
         System.out.println("o veiculo esta fazendo barulho.");
         return;
     }

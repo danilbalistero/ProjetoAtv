@@ -2,16 +2,45 @@ package TrabalhoClasses;
 
 import java.util.Scanner;
 
-import static TrabalhoClasses.Carro.criarCarro;
-
 public class Executora {
-    public static void main(String[] args) {
-       Scanner scanner = new Scanner(System.in);
+    private static Carro carro = null; // Variável para armazenar o carro
+    private static Moto moto = null;
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         int opcao;
+
         do {
             System.out.println();
-            System.out.println("Menu Principal:");
+            System.out.println("Menu Principal");
+            System.out.println("1. Carro");
+            System.out.println("2. Moto");
+            System.out.println("3. Sair");
+            System.out.println("Escolha uma opção para criar");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            if (opcao == 1){
+                executarMenuCarro();
+            } else if (opcao == 2) {
+                executarMenuMoto();
+            }
+
+        } while (opcao != 3);
+
+    }
+
+    /*Utilizei 2 metodos para o carro, o primeiro apenas para construir o menu
+    e o outro para construir o as opçoes*/
+    /*Utilizei if e else por que era as opçoes que eu estava mais familiarizadas*/
+
+    private static void executarMenuCarro() {
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            System.out.println();
+            System.out.println("==Menu Carro==");
             System.out.println("1. Criar carro");
             System.out.println("2. Ligar carro");
             System.out.println("3. Emitir barulho do carro");
@@ -21,27 +50,76 @@ public class Executora {
 
             opcao = scanner.nextInt();
             scanner.nextLine();
-
-            executarOpcao(opcao, scanner);
+            criacaoMenuCarro(opcao, scanner);
         } while (opcao != 5);
-
+    }
+    private static void criacaoMenuCarro(int opcao, Scanner scanner) {
+        if (opcao == 1) {
+            if (carro == null) {
+                carro = Carro.criarCarro(scanner);
+            } else {
+                System.out.println("Um carro já foi criado.");
+            }
+        } else if (opcao == 2) {
+            if (carro != null) {
+                carro.ligarCarro();
+            } else {
+                System.out.println("Crie um carro primeiro.");
+            }
+        } else if (opcao == 3) {
+            if (carro != null) {
+                carro.emitirBarulho();
+            } else {
+                System.out.println("Crie um carro primeiro.");
+            }
+        } else if (opcao == 4) {
+            carro.emitirSom();
+        } else if (opcao == 5) {
+            System.out.println("Saindo...");
+        } else {
+            System.out.println("Opção inválida! Tente novamente.");
+        }
     }
 
-    private static void executarOpcao(int opcao, Scanner scanner) {
-        Carro carro = new Carro("","", 0, "");
-        if (opcao == 1) {
-            criarCarro(scanner);
-        } else if (opcao == 2) {
-                carro.ligarCarro();
-        } else if (opcao == 3) {
-                carro.emitirSom();
-        } else if (opcao == 4) {
-                carro.Som();
-        } else if (opcao == 5){
-            System.out.println("Saindo...");
-        } else
-            System.out.println("Opção inválida! Tente novamente.");
+    /*
+        Quando criei os metodos para a moto foi bem mais facil, pq ja tinha um
+        "modelo" pronto. Gostaria de ter testado switch case.
+     */
+    private static void executarMenuMoto() {
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
+        do {
+            System.out.println();
+            System.out.println("==Menu Moto==");
+            System.out.println("1. Criar Moto");
+            System.out.println("2. Empinar moto");
+            System.out.println("3. Sair");
+            System.out.println("Escolha as opçoes disponiveis");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            criacaoMenuMoto(opcao, scanner);
+        } while (opcao != 3);
+    }
+
+    private static void criacaoMenuMoto(int opcao, Scanner scanner) {
+        if (opcao == 1) {
+            if (moto == null) {
+                moto = Moto.criarMoto(scanner); // Crie uma instância da classe Moto
+            } else {
+                System.out.println("A moto já foi criada.");
+            }
+        } else if (opcao == 2) {
+            if (moto != null) {
+                moto.empinar(scanner);
+            } else {
+                System.out.println("Crie uma moto primeiro.");
+            }
+        } else if (opcao == 3) {
+            System.out.println("Saindo...");
+        } else {
+            System.out.println("Opção inválida. Digite apenas os números que estão no menu.");
+        }
     }
 
 }

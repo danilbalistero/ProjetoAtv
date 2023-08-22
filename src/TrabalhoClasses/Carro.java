@@ -17,14 +17,14 @@ public class Carro extends Veiculo{
     }
 
     @Override
-    public void emitirSom() {
+    public void emitirBarulho() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite a categoria do veiculo. Picape/Utilitario");
         String categoria = scanner.nextLine();
 
         if ("Picape".equalsIgnoreCase(categoria)){
             System.out.println("RAM TCHU");
-            emitirSom();
+            emitirBarulho();
 
         } else {
             System.out.println("VROOM VROOM");
@@ -32,7 +32,7 @@ public class Carro extends Veiculo{
     }
 
     public void motorFuncionando() {
-        System.out.println("O carro esta funcionando");
+        System.out.println("O motor esta funcionando");
     }
 
     public void ligarCarro() {
@@ -49,7 +49,6 @@ public class Carro extends Veiculo{
     }
 
     public static Carro criarCarro(Scanner scanner) {
-        Scanner Scanner = new Scanner(System.in);
         System.out.print("Digite o modelo do carro: ");
         String modelo = scanner.nextLine();
         System.out.print("Digite a marca do carro: ");
@@ -63,7 +62,7 @@ public class Carro extends Veiculo{
         return new Carro(modelo, marca, ano, categoria);
     }
 
-    public void Som(){
+    public void emitirSom(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Deseja ligar o som do carro? ( [sim] [não] )");
         String somLigado = scanner.nextLine();
@@ -74,6 +73,9 @@ public class Carro extends Veiculo{
             System.out.println("O som esta desligado");
         }
     }
+
+
+
 
 
 }
